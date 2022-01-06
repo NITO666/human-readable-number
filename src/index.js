@@ -15,15 +15,11 @@ module.exports = function toReadable (number) {
         res = teens[number-10];
     }else if (number > 19 && number < 99){
         res = tens[c] + ' ' + ones[d];
-    }else if (number > 99 && number < 110){
+    }else if (number > 99 && d == 0){
         res = ones[c] + ' hundred ' + ones[e];
-    }else if(number > 109 && number < 120 ){
+    }else if(number > 109 && d == 1){
         res = ones[c] + ' hundred ' + teens[e];
-    }else if (number > 119 && number < 200){
-        res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
-    }else if (number > 199 && number < 220){
-        res = ones[c] + ' hundred' + ones[e];
-    }else if (number > 219 && number < 1000){
+    }else if (number > 109 && d > 1){
         res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
     }
     return res
