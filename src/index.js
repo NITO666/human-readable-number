@@ -13,14 +13,20 @@ module.exports = function toReadable (number) {
         res = ones[number]
     }else if (number < 20 && number > 9){
         res = teens[number-10];
-    }else if (number > 19 && number < 99){
+    }else if (number > 19 && d == 0 && number < 100){
+        res = tens[c];
+    }else if(number > 19 && d > 0  && number < 100){
         res = tens[c] + ' ' + ones[d];
-    }else if (number > 99 && d == 0){
+    }else if (number > 99 && d == 0 && e == 0){
+        res = ones[c] + ' hundred';
+    }else if (number > 99 && d == 0 && e > 0){
         res = ones[c] + ' hundred ' + ones[e];
     }else if(number > 109 && d == 1){
         res = ones[c] + ' hundred ' + teens[e];
-    }else if (number > 109 && d > 1){
+    }else if (number > 109 && d > 1 && e != 0){
         res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
+    }else if (number > 109 && d > 1 && e == 0){
+        res = ones[c] + ' hundred ' + tens[d];
     }
     return res
 }
