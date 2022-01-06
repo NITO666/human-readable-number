@@ -23,7 +23,7 @@ module.exports = function toReadable (number) {
         res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
     }else if (number > 199 && number < 220){
         res = ones[c] + ' hundred' + ones[e];
-    }else if (number > 219 && number < 300){
+    }else if (number > 219 && number < 1000){
         res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
     }
     return res
