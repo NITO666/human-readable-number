@@ -19,10 +19,12 @@ module.exports = function toReadable (number) {
         res = ones[c] + ' hundred ' + ones[e];
     }else if(number > 109 && number < 120 ){
         res = ones[c] + ' hundred ' + teens[e];
-    }else if (number > 119 && number < 1000){
+    }else if (number > 119 && number < 200){
+        res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
+    }else if (number > 199 && number < 220){
+        res = ones[c] + ' hundred' + ones[e];
+    }else if (number > 219 && number < 300){
         res = ones[c] + ' hundred ' + tens[d] + ' ' + ones[e];
     }
-    console.log(res)
-    console.log(res.length);
     return res
 }
